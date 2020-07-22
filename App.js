@@ -1,12 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import Home from './components/Home'
+import Game from './components/Game'
 
 export default function App() {
+
+  const [selectedComponent, setSelectedComponent] = useState('')
+
+  function game () {
+    console.log('Je suis dans le game')
+    setSelectedComponent('Game')
+  }
+
+  let sc;
+  let btn;
+  if (selectedComponent === '') {
+    sc = <Home game={game}/>
+    btn = null
+  } ;
+  if (selectedComponent === 'Game') {
+    sc = <Game/>
+    btn = null
+  } ;
+
+  
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      { btn }
+      { sc }
     </View>
   );
 }
