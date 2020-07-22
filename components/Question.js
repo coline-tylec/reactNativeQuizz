@@ -15,7 +15,7 @@ export default function Question() {
             //Attention, la ligne ci-dessous est asynchrone(mis de côté) et sera exécutée quand il aura fini la fonction dans laquelle il est
             setStep(step + 1)
             console.log(step)
-            if (data[step].value === verifyAnswer(value)) {
+            if (data[step].value === value) {
                 setScore(score + 1)
                 console.log("Score dans le game : " + score)
             } else {
