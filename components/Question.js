@@ -25,8 +25,8 @@ export default function Question() {
         } else {
             setTestOver(true)
             console.log(testOver)
-            // score = score;
-            // console.log("Score final : " + score)
+            setScore(score + 1)
+            console.log("Score final : " + score)
         }
     }
 
@@ -34,7 +34,7 @@ export default function Question() {
         return (
             <View>
                 <Text>
-                    Le test est terminé, voici ton score :
+                    Le test est terminé, voici ton score : {score}
                 </Text>
             </View>
         )
